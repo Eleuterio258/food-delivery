@@ -9,7 +9,9 @@ if(isset($_POST['register'])){
 	$phone = $_POST['phone'];
 	$email = $_POST['email'];
 	$pwd = $_POST['pwd'];
-	$password = password_hash($pwd,PASSWORD_DEFAULT);
+	//$password = password_hash($pwd,PASSWORD_DEFAULT);
+
+	$password =hash('sha256', $pwd);
 	$sql2 = "SELECT * FROM users WHERE email  = '$email'";
 	$result2 = $conn->query($sql2);
 

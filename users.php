@@ -1,7 +1,7 @@
-<?php 
+<?php
 session_start();
 include 'functions/flash.php';
-$flash = new \FlashMessage();
+$flash = new \FlashMessage ();
 include 'includes/session-check.php';
 include 'includes/session-check-admin.php';
 
@@ -27,34 +27,33 @@ $result = $conn->query($sql);
 						</tr>
 					</thead>
 					<tbody>
-						<?php 
-						if ($result->num_rows > 0) {
-							while($row = $result->fetch_assoc()){
-						?>
+						<?php
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        ?>
 						<tr>
-							<td><?php echo $row['id']?></td>
-							<td><?php echo $row['fname']?></td>
-							<td><?php echo $row['lname']?></td>
-							<td><?php echo $row['email']?></td>
-							<td><?php echo $row['phone']?></td>
-							<td><?php echo $row['address']?></td>
-							<td><?php echo $row['type']?></td>
+							<td><?php echo $row['id'] ?></td>
+							<td><?php echo $row['fname'] ?></td>
+							<td><?php echo $row['lname'] ?></td>
+							<td><?php echo $row['email'] ?></td>
+							<td><?php echo $row['phone'] ?></td>
+							<td><?php echo $row['address'] ?></td>
+							<td><?php echo $row['type'] ?></td>
 							<td>
-								<a href="edit-user.php?id=<?php echo $row['id']?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-								<a href="delete-user.php?id=<?php echo $row['id']?>" class="delete-btn"><i class="fa fa-trash" aria-hidden="true"></i></a>
+								<a href="edit-user.php?id=<?php echo $row['id'] ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+								<a href="delete-user.php?id=<?php echo $row['id'] ?>" class="delete-btn"><i class="fa fa-trash" aria-hidden="true"></i></a>
 							</td>
 						</tr>
-						<?php } } else { ?>
+						<?php }} else {?>
 							<tr>
 								<td colspan="8">No Order Found!</td>
 							</tr>
-						<?php }  ?>
+						<?php }?>
 					</tbody>
 				</table>
 			</div>
-			
+
 		</div>
 		<div class="clear-fix"></div>
 	</section>
-<?php include 'includes/footer.php'; ?>
-		
+<?php include 'includes/footer.php';?>

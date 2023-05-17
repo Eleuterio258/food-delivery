@@ -1,7 +1,7 @@
-<?php 
+<?php
 session_start();
 include 'functions/flash.php';
-$flash = new \FlashMessage();
+$flash = new \FlashMessage ();
 include 'includes/session-check.php';
 include 'includes/session-check-admin.php';
 
@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 	<section class="inner-page-sec">
 		<div class="container">
 			<h1>Add Food Item</h1>
-			
+
 			<div style="overflow-x:auto;">
 				<form class="category-form" action="functions/food-add-fun.php" method="post" enctype="multipart/form-data">
 					<table class="custom-tbl">
@@ -32,9 +32,9 @@ $result = $conn->query($sql);
 								<select name="category_id" class="input-text" required>
 									<option value="">Select Category</option>
 									<?php if ($result->num_rows > 0) {
-										while($row = $result->fetch_assoc()){ ?>
-											<option  value="<?php echo $row['id']?>"><?php echo $row['title']?></option>
-									<?php } } ?>
+    while ($row = $result->fetch_assoc()) {?>
+											<option  value="<?php echo $row['id'] ?>"><?php echo $row['title'] ?></option>
+									<?php }}?>
 								</select>
 							</td>
 						</tr>
@@ -82,10 +82,9 @@ $result = $conn->query($sql);
 						</tr>
 					</table>
 				</form>
-				
+
 			</div>
 		</div>
 		<div class="clear-fix"></div>
 	</section>
-<?php include 'includes/footer.php'; ?>
-		
+<?php include 'includes/footer.php';?>
